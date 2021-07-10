@@ -13,6 +13,8 @@
 		3B2DA076269843D900F95C4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2DA074269843D900F95C4A /* Main.storyboard */; };
 		3B2DA078269843DB00F95C4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B2DA077269843DB00F95C4A /* Assets.xcassets */; };
 		3B2DA07B269843DB00F95C4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2DA079269843DB00F95C4A /* LaunchScreen.storyboard */; };
+		3B2DA08326992D6700F95C4A /* AddMemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2DA08226992D6700F95C4A /* AddMemoViewController.swift */; };
+		3B2DA08526992D7800F95C4A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2DA08426992D7800F95C4A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3B2DA077269843DB00F95C4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B2DA07A269843DB00F95C4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B2DA07C269843DB00F95C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B2DA08226992D6700F95C4A /* AddMemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoViewController.swift; sourceTree = "<group>"; };
+		3B2DA08426992D7800F95C4A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				3B2DA070269843D900F95C4A /* SceneDelegate.swift */,
 				3B2DA072269843D900F95C4A /* ViewController.swift */,
 				3B2DA074269843D900F95C4A /* Main.storyboard */,
+				3B2DA08226992D6700F95C4A /* AddMemoViewController.swift */,
+				3B2DA08426992D7800F95C4A /* DetailViewController.swift */,
 				3B2DA077269843DB00F95C4A /* Assets.xcassets */,
 				3B2DA079269843DB00F95C4A /* LaunchScreen.storyboard */,
 				3B2DA07C269843DB00F95C4A /* Info.plist */,
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2DA08326992D6700F95C4A /* AddMemoViewController.swift in Sources */,
 				3B2DA073269843D900F95C4A /* ViewController.swift in Sources */,
+				3B2DA08526992D7800F95C4A /* DetailViewController.swift in Sources */,
 				3B2DA06F269843D900F95C4A /* AppDelegate.swift in Sources */,
 				3B2DA071269843D900F95C4A /* SceneDelegate.swift in Sources */,
 			);
