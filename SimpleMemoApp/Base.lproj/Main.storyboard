@@ -11,7 +11,6 @@
         <!--メモ一覧-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleMemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -21,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="EYr-33-sR2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoCell" id="EYr-33-sR2">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EYr-33-sR2" id="lVD-MV-Ovb">
@@ -44,15 +43,20 @@
                     <navigationItem key="navigationItem" title="メモ一覧" id="4H0-3J-57d">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3zG-iB-zNq">
                             <connections>
-                                <segue destination="meX-YV-f5h" kind="show" id="0Q1-rv-A0b"/>
+                                <segue destination="meX-YV-f5h" kind="show" identifier="" id="0Q1-rv-A0b"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="memoTableView" destination="Aae-WH-fVY" id="l28-dz-zv3"/>
+                        <segue destination="WgJ-SY-WuZ" kind="show" id="Tv9-ah-OIv"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="889.85507246376824" y="183.48214285714286"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--詳細-->
         <scene sceneID="Sqy-lp-ZPt">
             <objects>
                 <viewController id="WgJ-SY-WuZ" customClass="DetailViewController" customModule="SimpleMemoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,26 +64,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvu-TK-9Du">
-                                <rect key="frame" x="0.0" y="35" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="詳細" id="dNU-gr-7HS">
-                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="cWE-JM-PCg"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="4Tg-LT-iaC"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DxH-mf-i4W">
+                                <rect key="frame" x="20" y="124" width="374" height="502"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MUz-cN-JAb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" title="詳細" id="kf2-nU-Vxh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="trash" id="ozr-BG-3E2"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFe-wI-oYl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1852.1739130434785" y="541.74107142857144"/>
         </scene>
-        <!--Add Memo View Controller-->
+        <!--記入-->
         <scene sceneID="Olz-QE-Y8f">
             <objects>
                 <viewController id="meX-YV-f5h" customClass="AddMemoViewController" customModule="SimpleMemoApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,6 +108,9 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="save:" destination="meX-YV-f5h" eventType="touchUpInside" id="yDc-WW-8gw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IvO-Up-Ysj"/>
@@ -117,7 +125,10 @@
                             <constraint firstItem="sXG-Gx-rGj" firstAttribute="leading" secondItem="ZJz-1T-rAt" secondAttribute="leadingMargin" id="kWR-Zw-xun"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="iqr-wU-sMn"/>
+                    <navigationItem key="navigationItem" title="記入" id="AFz-Sz-W2t"/>
+                    <connections>
+                        <outlet property="memoTextView" destination="9Bn-fa-cXD" id="627-zs-3dj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KD5-lw-jpB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
