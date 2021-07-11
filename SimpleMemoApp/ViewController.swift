@@ -63,8 +63,17 @@ class ViewController: UIViewController ,UITableViewDelegate,UITableViewDataSourc
 
     //次の画面にデータを渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //次の画面を取得
-        let detailViewController = segue.destination
+        if segue.identifier == "toDetail" {
+            //次の画面をUIViewController型からDetailviewController型にダウンキャスト（型変換）して取得する
+            let detailViewController = segue.destination as! DetailViewController
+            //遷移前にtableViewで今選ばれているセルを取得する,次の画面にselectedIndexpathのrow番目を渡してあげる
+            let selectedIndexPath = memoTableView.indexPathForSelectedRow!
+            //次の画面(DetailViewController)のselectedMemoにmemoArrayのselectedIndexPath.row番目の値を入れてあげる→値を渡せてる
+            detailViewController.selectedMemo = memoArray[selectedIndexPath.row]
+            //何番目のセルが押されたのかという情報も一緒に値を渡す
+            detailViewController.selectedRow = selectedIndexPath.row
+        }
+        
     }
     
 }
